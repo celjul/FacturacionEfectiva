@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<database-object>
+		<create>
+			drop view vcomprobantes
+		</create>
+		<drop></drop>
+	</database-object>
+	<database-object>
+		<create>
+			drop table vcomprobantes
+		</create>
+		<drop></drop>
+	</database-object>
+	<database-object>
+		<create>
+			drop view vmontoscomprobantes
+		</create>
+		<drop></drop>
+	</database-object>
+
+	<database-object>
+		<create>
+			create or replace view vmontoscomprobantes as
+				select `tconceptoscomprobante`.`NIdComprobante` AS `NIdComprobante`,
+				sum(`tconceptoscomprobante`.`NCantidad` * `tconceptoscomprobante`.`DPrecioUnitario` - `tconceptoscomprobante`.`NDescuento`) AS `NMonto`
+				from `tconceptoscomprobante` group by `tconceptoscomprobante`.`NIdComprobante`
+		</create>
+		<drop>drop view vmontoscomprobantes</drop>
+	</database-object>
+	
+	<database-object>
+		<create>
+			create or replace view vcomprobantes as
+				select `c`.`NIdComprobante` AS `NIdComprobante`,
+				`c`.`DFechaCreacion` AS `DFechaCreacion`,
+				`cl`.`VRFC` AS `VRFC`,
+				`cl`.`NIdCliente` AS `NIdCliente`
+				,if(`cl`.`VRazonSocial` is null,concat(`cl`.`VNombre`,' ',`cl`.`VApellidoPaterno`,' '),
+				`cl`.`VRazonSocial`) AS `VCliente`,
+				`c`.`BActivo` AS `BActivo`,
+				`cat`.`NIdCatalogo` AS `NIdCatalogo`,
+				`cat`.`VDescripcion` AS `VDescripcion`,
+				`c`.`VUUID` AS `VUUID`,
+				`c`.`NIdEmisor` AS `NIdEmisor`,
+				round(`m`.`NMonto` - `m`.`NMonto` * `c`.`NDescuento`,2) AS `NMontoSinIva` ,
+				if(`c`.`NFolioMasivo` is null, `NFolio`,`NFolioMasivo`) AS `Folio`,
+				`c`.`NFolioMasivo` AS `NFolioMasivo`,
+				`c`.`VVentaUnica` AS `VVentaUnica`
+				from (((`tcomprobantes` `c` join `tclientes` `cl` on(`c`.`NIdCliente` = `cl`.`NIdCliente`))
+				join `tcatalogos` `cat` on(`c`.`NIdTipoDocumento` = `cat`.`NIdCatalogo`))
+				join `vmontoscomprobantes` `m` on(`m`.`NIdComprobante` = `c`.`NIdComprobante`))
+		</create>
+		<drop>drop view vcomprobantes</drop>
+	</database-object>
+</hibernate-mapping>

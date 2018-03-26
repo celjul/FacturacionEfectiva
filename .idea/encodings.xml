@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/entich-commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-clientes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-emisores" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-facturacion" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-paquetes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-productos" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-usuarios" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ezfact-web" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

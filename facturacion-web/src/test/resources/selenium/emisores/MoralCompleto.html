@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8071/" />
+<title>MoralCompleto</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">MoralCompleto</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/facturacion-web/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=short-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=shot-emisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=text-rfc</td>
+	<td>CAO860818S34</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tipo-persona-moral</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-razon-social</td>
+	<td>Persona Moral Selenium S.A. de C.V.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-regimen</td>
+	<td>Régimen 1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-add-regimen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-add-direccion</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-calle</td>
+	<td>Calle</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-no-exterior</td>
+	<td>Ext</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-no-interior</td>
+	<td>int</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-pais</td>
+	<td>label=México</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#sel-estado &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-estado</td>
+	<td>label=Distrito Federal</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#sel-municipio &gt; option[value=&quot;271&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-municipio</td>
+	<td>label=Cuauhtémoc</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=txt-colonia</td>
+	<td>More</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Morelos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ui-id-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-referencias</td>
+	<td>referecias de la direccion</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-dir-ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-dir-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-guardar-emisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.toast-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.toast-message</td>
+	<td>Se ha registrado al emisor correctamente.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.entich.pom</groupId>
+		<artifactId>pos-entich-parent-pom</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.entich</groupId>
+	<artifactId>facturacion-web</artifactId>
+	<packaging>war</packaging>
+	<version>${project.version}</version>
+	<name>facturacion-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<spring.security.version>3.1.4.RELEASE</spring.security.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-usuarios</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-emisores</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-clientes</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-productos</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-facturacion</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.entich</groupId>
+			<artifactId>ezfact-paquetes</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate4</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>servletapi</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.5.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-annotations</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-databind</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		<!--captcha -->
+		<dependency>
+			<groupId>net.tanesha.recaptcha4j</groupId>
+			<artifactId>recaptcha4j</artifactId>
+			<version>0.0.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>3.8</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${war.name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>templates/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>reportes/**</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<resourceEncoding>ISO-8859-1</resourceEncoding>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>png</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jasper</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-resources-plugin</artifactId> -->
+			<!-- <version>2.7</version> -->
+			<!-- <configuration> -->
+			<!-- <encoding>UTF-8</encoding> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+				<configuration>
+					<!-- <contextPath>/</contextPath> -->
+					<!-- <jvmArgs>-Xmx1024</jvmArgs> -->
+					<!--<jvmArgs>-Xmx2024m -Xms2024m -XX:PermSize=256m -XX:MaxPermSize=512m</jvmArgs> -->
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8071</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>8070</port>
+					<path>/</path>
+					<systemProperties>
+						<JAVA_OPTS>-Xms2048m -Xmx4096m -XX:PermSize=128m
+							-XX:MaxPermSize=256m -Xss4m -XX:+UseConcMarkSweepGC
+							-XX:+CMSClassUnloadingEnabled</JAVA_OPTS>
+					</systemProperties>
+					<!-- <contextReloadable>true</contextReloadable> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<properties>
+				<war.name>facturacion-web</war.name>
+				<jdbc.url>jdbc:mysql://localhost/fact-efectiva</jdbc.url>
+				<jdbc.user>root</jdbc.user>
+				<jdbc.pass>root</jdbc.pass>
+
+				<hibernate.show_sql>true</hibernate.show_sql>
+				<hibernate.format_sql>true</hibernate.format_sql>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
+
+				<sendingblue.host>https://api.sendinblue.com/v2.0</sendingblue.host>
+				<sendingblue.key>N1tHf2Fd0wbxQTOY</sendingblue.key>
+				<email.direccion.origen.email>hola@facturacionefectiva.com</email.direccion.origen.email>
+				<email.direccion.origen.nombre>Facturación Efectiva</email.direccion.origen.nombre>
+
+				<mail.host>smtp.1and1.mx</mail.host>
+				<mail.port>587</mail.port>
+				<mail.username>hola@facturacionefectiva.com</mail.username>
+				<mail.password>Fact4c1n2018</mail.password>
+				<mail.properties>
+					&lt;props&gt;
+					&lt;prop
+					key="mail.smtp.from">dev@bstmexico.com.mx&lt;/prop&gt;
+					&lt;prop
+					key="mail.smtp.auth"&gt;true&lt;/prop&gt;
+					&lt;prop
+					key="mail.smtp.socketFactory.fallback"&gt;false&lt;/prop&gt;
+					&lt;prop key="mail.debug"&gt;false&lt;/prop&gt;
+					&lt;/props&gt; </mail.properties>
+
+				<facturacion.produccion>false</facturacion.produccion>
+				<facturacion.usuario>mvpNUXmQfK8=</facturacion.usuario>
+				<facturacion.password>mvpNUXmQfK8=</facturacion.password>
+				<facturacion.logos>C:\\plantillas\\</facturacion.logos>
+				<facturacion.plantillas>C:\\plantillas\\</facturacion.plantillas>
+				<facturacion.clavesecreta>6Lei0g0TAAAAAAIvCSxnBXwbLta_UnMPGYoIajzn</facturacion.clavesecreta>
+				<log.name>facturacion-web.dev</log.name>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<war.name>ROOT_TEST</war.name>
+				<jdbc.url>jdbc:mysql://localhost/fact-efectiva-test</jdbc.url>
+				<jdbc.user>facturacion-test</jdbc.user>
+				<jdbc.pass>F4cTur4c1On-T3$7</jdbc.pass>
+
+				<hibernate.show_sql>false</hibernate.show_sql>
+				<hibernate.format_sql>false</hibernate.format_sql>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
+
+				<sendingblue.host>https://api.sendinblue.com/v2.0</sendingblue.host>
+				<sendingblue.key>N1tHf2Fd0wbxQTOY</sendingblue.key>
+				<email.direccion.origen.email>hola@facturacionefectiva.com</email.direccion.origen.email>
+				<email.direccion.origen.nombre>Facturación Efectiva</email.direccion.origen.nombre>
+
+				<mail.host>smtp.1and1.mx</mail.host>
+				<mail.port>587</mail.port>
+				<mail.username>hola@facturacionefectiva.com</mail.username>
+				<mail.password>Fact4c1n2018</mail.password>
+				<mail.properties>
+					&lt;props&gt;
+					&lt;prop
+					key="mail.smtp.from">dev@bstmexico.com.mx&lt;/prop&gt;
+					&lt;prop
+					key="mail.smtp.auth"&gt;true&lt;/prop&gt;
+					&lt;prop
+					key="mail.smtp.socketFactory.fallback"&gt;false&lt;/prop&gt;
+					&lt;prop key="mail.debug"&gt;false&lt;/prop&gt;
+					&lt;/props&gt; </mail.properties>
+
+				<facturacion.produccion>false</facturacion.produccion>
+				<facturacion.usuario>mvpNUXmQfK8=</facturacion.usuario>
+				<facturacion.password>mvpNUXmQfK8=</facturacion.password>
+				<facturacion.logos>C://plantillas//</facturacion.logos>
+				<facturacion.plantillas>C://plantillas//</facturacion.plantillas>
+				<facturacion.clavesecreta>6LezuhkTAAAAAGrFcd9dVdZs8nKWn7xuIRsOR6rL</facturacion.clavesecreta>
+
+				<log.name>facturacion-web.test</log.name>
+			</properties>
+		</profile>
+
+
+	</profiles>
+</project>

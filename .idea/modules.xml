@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/entich-commons/entich-commons.iml" filepath="$PROJECT_DIR$/entich-commons/entich-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-clientes/ezfact-clientes.iml" filepath="$PROJECT_DIR$/ezfact-clientes/ezfact-clientes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-emisores/ezfact-emisores.iml" filepath="$PROJECT_DIR$/ezfact-emisores/ezfact-emisores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-facturacion/ezfact-facturacion.iml" filepath="$PROJECT_DIR$/ezfact-facturacion/ezfact-facturacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-paquetes/ezfact-paquetes.iml" filepath="$PROJECT_DIR$/ezfact-paquetes/ezfact-paquetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-productos/ezfact-productos.iml" filepath="$PROJECT_DIR$/ezfact-productos/ezfact-productos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-usuarios/ezfact-usuarios.iml" filepath="$PROJECT_DIR$/ezfact-usuarios/ezfact-usuarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ezfact-web/ezfact-web.iml" filepath="$PROJECT_DIR$/ezfact-web/ezfact-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos-entich-parent-pom.iml" filepath="$PROJECT_DIR$/pos-entich-parent-pom.iml" />
+    </modules>
+  </component>
+</project>

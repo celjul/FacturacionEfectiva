@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<temisor VTipo="Fisica" NIdEmisor="1" VRFC="GIMV8902037X8"
+		VApellidoMaterno="Martínez" VApellidoPaterno="Gil" VNombre="Verónica" />
+	<temisor VTipo="Moral" NIdEmisor="2" VRFC="ACM920820FSA"
+		VRazonSocial="Apple Computer México" />
+</dataset>

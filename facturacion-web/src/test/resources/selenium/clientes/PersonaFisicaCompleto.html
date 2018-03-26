@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8071/" />
+<title>PersonaFisicaCompleto</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PersonaFisicaCompleto</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/facturacion-web/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#emisor &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=emisor</td>
+	<td>label=Persona Moral Selenium S.A. de C.V.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-sel-emisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=menu-clientes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=menu-clientes-nuevo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tipo-persona-fisica</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=text-rfc</td>
+	<td>PETD890802H45</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-nombre</td>
+	<td>Diana</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-apellido-paterno</td>
+	<td>Pérez</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-apellido-materno</td>
+	<td>Tello</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-razon-comercial</td>
+	<td>Selenium Test Persona Fisica</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-sitio</td>
+	<td>http://www.google.com.mx</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-observaciones</td>
+	<td>Es un cliente de pruebas para selenium.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-add-direccion</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-calle</td>
+	<td>Calle</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-no-exterior</td>
+	<td>No. Exterior</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-no-interior</td>
+	<td>No. Interior</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-pais</td>
+	<td>label=México</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#sel-estado &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-estado</td>
+	<td>label=Distrito Federal</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#sel-municipio &gt; option[value=&quot;271&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sel-municipio</td>
+	<td>label=Cuauhtémoc</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=txt-colonia</td>
+	<td>Mor</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Morelos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ui-id-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-localidad</td>
+	<td>México, D.F</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-referencias</td>
+	<td>referencias de la nueva direccion capturada</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-dir-ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-dir-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-add-contacto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-nombre-contacto</td>
+	<td>Contacto Selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-ape-pat-contacto</td>
+	<td>Selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-ape-mat-contacto</td>
+	<td>IDE</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-puesto-contacto</td>
+	<td>Director general</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-email-contacto</td>
+	<td>luis.cardeno@gmail.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-modal-cto-agregar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-modal-cto-close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-guardar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.toast-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.toast-message</td>
+	<td>Se registró al cliente correctamente.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

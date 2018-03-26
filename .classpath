@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="entich-commons/src/main/java"/>
+	<classpathentry kind="src" path="entich-commons/src/test/java"/>
+	<classpathentry kind="src" path="ezfact-clientes/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-clientes/src/test/java"/>
+	<classpathentry kind="src" path="ezfact-emisores/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-emisores/src/test/java"/>
+	<classpathentry kind="src" path="ezfact-facturacion/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-facturacion/src/test/java"/>
+	<classpathentry kind="src" path="ezfact-paquetes/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-productos/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-productos/src/test/java"/>
+	<classpathentry kind="src" path="ezfact-usuarios/src/main/java"/>
+	<classpathentry kind="src" path="ezfact-usuarios/src/test/java"/>
+	<classpathentry kind="src" path="facturacion-web/src/main/java"/>
+	<classpathentry kind="src" path="facturacion-web/src/test/java"/>
+	<classpathentry kind="src" path="facturacion-web/target/tomcat/work/localEngine/localhost/facturacion-web"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

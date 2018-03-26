@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-01-07T19:59:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factura" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="1bdb2d60-e8d8-4a70-afae-5abc325e109e">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.3310000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="OBSERVACIONES" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["NA"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CADENA_ORIGINAL" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["||3.2|2013-07-29T12:02:45|ingreso|PAGO EN UNA SOLA EXHIBICIÓN|Inmediato|78543.36|1.00|Peso Mexicano|91110.30|No Identificado|Iztacalco, México|PCE820921ID8|PARAFINAS Y CERAS ESPECIALES S.A. DE C.V.|Sur 185|2316|GABRIEL RAMOS MILLÁN|Iztacalco|DISTRITO FEDERAL|México|08730|Sur 185|2316|GABRIEL RAMOS MILLÁN|Iztacalco|DISTRITO FEDERAL|México|08730|Régimen General de Ley Personas Morales|XAXX010101000|PUBLICO EN GENERAL|SUR 185|2316|GABRIEL RAMOS MILLÁN|Iztacalco|DISTRITO FEDERAL|México|08730|1.00|Pz|ATVE|Sku: Ip: 42-002.PAY.ARV.ATVE|78543.36|78543.36|IVA|16.00|12566.94|12566.94||"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PATH_QR" class="java.lang.Object" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CADENA_ORIGINA_TIMBRE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["||1.0|32FDCE86-EB6B-4C5C-9145-947E5434151F|2013-07-29T12:05:35|LqZaqfKag7N67F9arkG43NJoTX2E95bw5n8qUlJzSKL8UQNcBdzwNGlXQZMtVVtAZx3mW+s+xuTZBiGXacCRtQuzsnNXkZ6RF3pX+5CZF3anf3w4/6piX/G5Bt+H9pvMTtLkG8FKhkmrzvklJU5D4o3sAy+q7ZcYphmFFRhxqUk=|00001000000202639096||"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="COMPROBANTE" class="com.entich.ezfact.facturacion.model.Comprobante" isForPrompting="false"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@folio]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@fecha]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/@nombre]]></fieldDescription>
+	</field>
+	<field name="rfc" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/@rfc]]></fieldDescription>
+	</field>
+	<field name="calle" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@calle]]></fieldDescription>
+	</field>
+	<field name="codigoPostal" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@codigoPostal]]></fieldDescription>
+	</field>
+	<field name="colonia" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@colonia]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@estado]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@municipio]]></fieldDescription>
+	</field>
+	<field name="pais" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@pais]]></fieldDescription>
+	</field>
+	<field name="noCertificadoSAT" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Complemento/TimbreFiscalDigital/@noCertificadoSAT]]></fieldDescription>
+	</field>
+	<field name="FechaTimbrado" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Complemento/TimbreFiscalDigital/@FechaTimbrado]]></fieldDescription>
+	</field>
+	<field name="UUID" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Complemento/TimbreFiscalDigital/@UUID]]></fieldDescription>
+	</field>
+	<field name="selloCFD" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Complemento/TimbreFiscalDigital/@selloCFD]]></fieldDescription>
+	</field>
+	<field name="selloSAT" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Complemento/TimbreFiscalDigital/@selloSAT]]></fieldDescription>
+	</field>
+	<field name="nombreReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/@nombre]]></fieldDescription>
+	</field>
+	<field name="rfcReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/@rfc]]></fieldDescription>
+	</field>
+	<field name="calleReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@calle]]></fieldDescription>
+	</field>
+	<field name="codigoPostalReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@codigoPostal]]></fieldDescription>
+	</field>
+	<field name="coloniaReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@colonia]]></fieldDescription>
+	</field>
+	<field name="estadoReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@estado]]></fieldDescription>
+	</field>
+	<field name="municipioReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@municipio]]></fieldDescription>
+	</field>
+	<field name="noInteriorReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@noInterior]]></fieldDescription>
+	</field>
+	<field name="paisReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@pais]]></fieldDescription>
+	</field>
+	<field name="noExterior" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@noExterior]]></fieldDescription>
+	</field>
+	<field name="noInterior" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/DomicilioFiscal/@noInterior]]></fieldDescription>
+	</field>
+	<field name="noExteriorReceptor" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Receptor/Domicilio/@noExterior]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@serie]]></fieldDescription>
+	</field>
+	<field name="sello" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@sello]]></fieldDescription>
+	</field>
+	<field name="calleEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@calle]]></fieldDescription>
+	</field>
+	<field name="noExteriorEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@noExterior]]></fieldDescription>
+	</field>
+	<field name="noInteriorlEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@noInterior]]></fieldDescription>
+	</field>
+	<field name="coloniaEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@colonia]]></fieldDescription>
+	</field>
+	<field name="codigoPostalEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@codigoPostal]]></fieldDescription>
+	</field>
+	<field name="municipioEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@municipio]]></fieldDescription>
+	</field>
+	<field name="estadoEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/ExpedidoEn/@estado]]></fieldDescription>
+	</field>
+	<field name="formaDePago" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@formaDePago]]></fieldDescription>
+	</field>
+	<field name="condicionesDePago" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@condicionesDePago]]></fieldDescription>
+	</field>
+	<field name="motivoDescuento" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@motivoDescuento]]></fieldDescription>
+	</field>
+	<field name="NumCtaPago" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@NumCtaPago]]></fieldDescription>
+	</field>
+	<field name="metodoDePago" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@metodoDePago]]></fieldDescription>
+	</field>
+	<field name="tipoDeComprobante" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@tipoDeComprobante]]></fieldDescription>
+	</field>
+	<field name="Regimen" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/Emisor/RegimenFiscal/@Regimen]]></fieldDescription>
+	</field>
+	<field name="noCertificado" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@noCertificado]]></fieldDescription>
+	</field>
+	<field name="LugarExpedicion" class="java.lang.String">
+		<fieldDescription><![CDATA[/Comprobante/@LugarExpedicion]]></fieldDescription>
+	</field>
+	<title>
+		<band height="100" splitType="Stretch">
+			<frame>
+				<reportElement x="-20" y="0" width="612" height="100" uuid="619e7f54-5e3e-4140-8b1e-f930587d3a6d"/>
+				<box bottomPadding="0">
+					<topPen lineColor="#020202"/>
+					<leftPen lineColor="#020202"/>
+					<bottomPen lineWidth="1.0" lineColor="#020202"/>
+					<rightPen lineColor="#020202"/>
+				</box>
+				<image scaleImage="RealSize">
+					<reportElement x="180" y="10" width="256" height="70" uuid="cd305e6d-6c43-4c46-bdbd-bda1e04a077c"/>
+					<imageExpression><![CDATA[$P{SUBREPORT_DIR} + File.separator + "logo-tejon.png"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-27" positionType="Float" mode="Transparent" x="442" y="10" width="150" height="30" forecolor="#020202" uuid="70f5e3b6-f6bf-4983-8ee5-f7b0a9ef01b5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tipoDeComprobante}.equalsIgnoreCase( "ingreso" ) ? "Factura" : "Nota de Crédito"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="130" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="10" width="572" height="48" backcolor="#F0821F" uuid="89d9f60e-5fed-4ff9-ac78-e1ab52a578fc">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<frame>
+					<reportElement x="0" y="0" width="572" height="16" uuid="2c672a08-8713-46b0-ba3e-c1a740008a64">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+					</box>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="textField-1" positionType="Float" x="0" y="0" width="458" height="14" forecolor="#FFFFFF" uuid="a3acbe07-9a23-4f3d-bca0-7136a65af2bd">
+							<property name="local_mesure_unitx" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="local_mesure_unity" value="pixel"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<printWhenExpression><![CDATA[$F{nombre}.equals("null") ? Boolean.FALSE : Boolean.TRUE]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="5"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="SansSerif" size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="textField-2" positionType="Float" x="458" y="0" width="114" height="14" forecolor="#FFFFFF" uuid="c2b7ad9e-e384-446a-98be-8a65086831db">
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<box rightPadding="5"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{rfc}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-31" positionType="Float" x="0" y="16" width="252" height="13" forecolor="#FFFFFF" uuid="8eb04917-01a3-49b1-83f9-e9b105a7302a">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Regimen}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-20" positionType="Float" mode="Transparent" x="252" y="16" width="320" height="29" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="17999f23-f1c7-4710-ab72-f0cde5a336ab">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{calle} == null ? "" : $F{calle}) +
+" Num.: " + ($F{noExterior} == null ? "" : $F{noExterior}) +
+($F{noInterior} == null ? "" : " Num. Int.: " + $F{noInterior}) + "<br/>" +
+($F{colonia} == null ? "" : $F{colonia}) +
+" C.P.: " + ($F{codigoPostal} == null ? "" : $F{codigoPostal}) + "<br/>" +
+($F{municipio} == null ? "" : $F{municipio})  + ($F{estado} == null ? "" : " " + $F{estado}) +
+($F{pais} == null ? "" : " " + $F{pais})]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="60" width="382" height="55" isPrintWhenDetailOverflows="true" uuid="4bd1738a-367b-4dfe-9a39-93375cdeca8f">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-17" positionType="Float" x="0" y="11" width="100" height="11" uuid="027418cb-0a25-412b-bfd7-7be8e2e47dc6">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box rightPadding="1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[RFC:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-17" positionType="Float" x="0" y="22" width="100" height="11" uuid="46bf3157-169b-476f-b19b-27ddd607211e">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box rightPadding="1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Domicilio:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-6" positionType="Float" x="100" y="11" width="275" height="11" uuid="6f86c85e-b178-443c-a0f1-b94d0f2e38fa">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box leftPadding="1"/>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcReceptor}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-7" positionType="Float" mode="Transparent" x="100" y="22" width="275" height="11" uuid="76aae966-bcf1-4f6e-a976-f258f5af0ef1">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="1"/>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{calleReceptor} == null ? "" : $F{calleReceptor}) +
+" Num.: " + ($F{noExteriorReceptor} == null ? "" : $F{noExteriorReceptor}) +
+($F{noInteriorReceptor} == null ? "" : " Num. Int.: " + $F{noInteriorReceptor}) + "<br/>" +
+($F{coloniaReceptor} == null ? "" : $F{coloniaReceptor}) +
+" C.P.: " + ($F{codigoPostalReceptor} == null ? "" : $F{codigoPostalReceptor}) + "<br/>" +
+($F{municipioReceptor} == null ? "" : $F{municipioReceptor})  + ($F{estadoReceptor} == null ? "" : " " + $F{estadoReceptor}) +
+($F{paisReceptor} == null ? "" : " " + $F{paisReceptor})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-15" positionType="Float" x="0" y="33" width="100" height="11" uuid="e1641ce0-a85e-4131-88f1-92c6b4c25389">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box rightPadding="1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Lugar de Expedición:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-9" positionType="Float" x="100" y="33" width="275" height="11" uuid="e4b8db61-8348-4a5b-b2c6-793cf0ff1c51">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="1"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{LugarExpedicion}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement positionType="Float" x="0" y="0" width="378" height="11" isPrintWhenDetailOverflows="true" uuid="1a374d6d-42f8-4ae8-8d18-97cfda0426d3">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<staticText>
+						<reportElement key="staticText-13" positionType="Float" x="0" y="0" width="100" height="11" uuid="37dafc84-11ec-4071-9dad-12dce5c0447d">
+							<property name="local_mesure_unity" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<box rightPadding="1"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<text><![CDATA[Nombre:]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement key="textField-5" positionType="Float" x="100" y="0" width="275" height="11" uuid="10610fc0-37f2-433f-ae62-ee7c09195bc0">
+							<property name="local_mesure_unity" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="local_mesure_unitx" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<box leftPadding="1"/>
+						<textElement verticalAlignment="Middle" markup="styled">
+							<font fontName="SansSerif" size="8"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{nombreReceptor}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="382" y="58" width="190" height="70" uuid="3b6afea4-1afb-40e6-bd2a-1b56343e73c9">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-29" positionType="Float" x="0" y="22" width="90" height="11" uuid="917130d2-2ce8-4d86-b62d-17dcb3e7554d">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Método de Pago:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-23" positionType="Float" x="90" y="22" width="95" height="11" isPrintWhenDetailOverflows="true" uuid="43f1d4df-6cd2-402a-86c3-2a1dc388790a">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{metodoDePago}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-29" positionType="Float" x="0" y="33" width="90" height="11" isRemoveLineWhenBlank="true" uuid="ea4dd25d-7b6b-4f5e-bf16-096f92872869">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$F{NumCtaPago} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Número de Cuenta:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-23" positionType="Float" x="90" y="33" width="95" height="11" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="6bdf8079-b782-48bb-9b00-d5dd6cacc5e3">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$F{NumCtaPago} != null]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NumCtaPago}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-29" positionType="Float" x="0" y="44" width="90" height="11" isRemoveLineWhenBlank="true" uuid="128e9d05-8c84-4107-8bc3-cc052f2c9f83">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$F{NumCtaPago} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Forma de Pago:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-21" positionType="Float" x="90" y="44" width="95" height="11" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="b10f7935-1511-47c8-9673-290588073306">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{formaDePago}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-29" positionType="Float" x="0" y="55" width="90" height="11" isRemoveLineWhenBlank="true" uuid="5a5ab40f-9327-4164-844e-ea48e37d0d98">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$F{NumCtaPago} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Condición de Pago:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-17" positionType="Float" x="90" y="55" width="95" height="11" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="31c662e0-663f-4fe0-aafb-45eb2fe159ce">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[new Boolean($F{condicionesDePago} != null)]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{condicionesDePago}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-22" positionType="Float" x="0" y="0" width="90" height="11" uuid="e35ff75d-5f3c-4945-9bf8-e27d48a1bbff">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Fecha de Emision:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-12" positionType="Float" x="90" y="0" width="95" height="11" isPrintWhenDetailOverflows="true" uuid="8df53808-c4d3-49d8-9b7a-aee7dbe55412">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fecha}.substring(0,19)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-15" positionType="Float" x="0" y="11" width="90" height="11" uuid="963e5a2a-cb16-4ad3-a150-f17f71d7ba3b">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Fecha Certificación:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-9" positionType="Float" x="90" y="11" width="95" height="11" isPrintWhenDetailOverflows="true" uuid="52f29f7d-f085-4ce5-9ebf-ae31753a8645">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FechaTimbrado}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" positionType="Float" x="0" y="0" width="573" height="16" uuid="b0870ec2-d7c0-4ef1-afe0-17f4f4212371">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportParameter name="PARAM_XML">
+					<subreportParameterExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/")]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="COMPROBANTE">
+					<subreportParameterExpression><![CDATA[$P{COMPROBANTE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CADENA_ORIGINAL">
+					<subreportParameterExpression><![CDATA[$P{CADENA_ORIGINAL}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/Comprobante/Conceptos/Concepto")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}.concat(File.separator).concat("detalleFactura.jasper")]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="294" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement key="staticText-12" positionType="Float" mode="Opaque" x="0" y="175" width="571" height="14" forecolor="#FFFFFF" backcolor="#969696" uuid="173a49f9-a9b1-4ec6-bb68-7d12dc0fc8dd">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF8000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Sello del SAT]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-13" positionType="Float" mode="Transparent" x="0" y="154" width="571" height="18" backcolor="#CCCCCC" uuid="b362a60e-2add-4d41-8a71-116f60367afd">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{selloCFD}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-14" positionType="Float" mode="Transparent" x="0" y="190" width="571" height="18" backcolor="#CCCCCC" uuid="d8d9146b-e654-4ada-bd0d-163eaedf23de">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{selloSAT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-15" positionType="Float" mode="Transparent" x="0" y="120" width="571" height="18" backcolor="#CCCCCC" uuid="cdebdaba-9cdc-4d76-96bb-ac860fe88850">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CADENA_ORIGINA_TIMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-26" positionType="FixRelativeToBottom" mode="Opaque" x="150" y="20" width="389" height="13" forecolor="#FFFFFF" backcolor="#F0821F" uuid="b045c568-d215-4bb8-b4dd-528f2236d5f5">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Este documento es una representación impresa de un CFDI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" positionType="Float" mode="Opaque" x="0" y="140" width="570" height="14" forecolor="#FFFFFF" backcolor="#969696" uuid="68855242-3825-4769-8ef5-6e7778781b96">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF8000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Sello digital del CFDI]]></text>
+			</staticText>
+			<image>
+				<reportElement key="image-2" positionType="Float" mode="Opaque" x="0" y="0" width="98" height="98" uuid="a9d97e72-26e4-4072-8506-cdd0479e7c69">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{PATH_QR}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-9" positionType="Float" mode="Opaque" x="0" y="106" width="571" height="14" forecolor="#FFFFFF" backcolor="#969696" uuid="11fb6e88-0ae5-4312-b848-6d9ab12a8053">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FF8000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Cadena original del complemento de certificación digital del SAT]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="109" y="39" width="461" height="40" isPrintWhenDetailOverflows="true" uuid="334ffb47-90ab-4cca-81c0-0b90a5c4bb10">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-17" positionType="Float" x="0" y="22" width="95" height="11" uuid="48025535-f933-483f-aabf-b5d82ae2a1de">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Certificado SAT:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-8" positionType="Float" x="95" y="0" width="353" height="11" uuid="24429694-78d5-4102-a428-5c11aa9ca9a6">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement textAlignment="Left" markup="html">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{UUID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-10" positionType="Float" x="95" y="11" width="353" height="11" uuid="ed856413-56cd-47e0-a455-cb8064f9c545">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{noCertificado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-13" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="95" height="11" uuid="2b64e544-2efd-42bc-ae25-8da120361dea">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Folio Fiscal:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-10" positionType="Float" x="95" y="22" width="353" height="11" uuid="5aa9cf62-14d4-416f-8634-9026bda92422">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{noCertificadoSAT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" positionType="Float" x="0" y="11" width="95" height="11" uuid="d7e576d6-c405-480b-b3d3-3ff0c96613a3">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Certificado Emisor]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="-20" y="230" width="612" height="64" forecolor="#FFFFFF" backcolor="#000000" uuid="37c0d20d-77ab-4555-ad3d-dac20b266658">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[FACTURACIÓN EFECTIVA es la manera mas fácil y rápida de facturar. ¡Contáctanos!    
+Teléfono: 55 12041299     
+http://www.facturacionefectiva.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

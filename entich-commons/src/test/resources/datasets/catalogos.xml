@@ -1,0 +1,10 @@
+<dataset>
+	<tcatalogo NIdCatalogo="1" VDescripcion="Una Opcion 1 Test" VTipo="test" />
+	<tcatalogo NIdCatalogo="2" VDescripcion="Otra Opcion 2 Test" VTipo="test" />
+	<tcatalogo NIdCatalogo="3" VDescripcion="Aqui Opcion 3 Test" VTipo="test" />
+	
+	<tcatalogo NIdCatalogo="4" VDescripcion="Opcion 1 Otro Test" VTipo="test_otro" />
+	<tcatalogo NIdCatalogo="5" VDescripcion="Opcion 2 Otro Test" VTipo="test_otro" />
+	<tcatalogo NIdCatalogo="6" VDescripcion="Opcion 3 Otro Test" VTipo="test_otro" />
+	
+</dataset>

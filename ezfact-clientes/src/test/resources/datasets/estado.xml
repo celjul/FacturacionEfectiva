@@ -1,0 +1,12 @@
+<dataset>
+    <testado 
+        NIdEstado="1" 
+        VNombre="Aquiles va el estado_1" 
+        NIdPais="1"
+    />
+    <testado 
+        NIdEstado="2" 
+        VNombre="Aquiles va el estado_2" 
+        NIdPais="1"
+    />
+</dataset>

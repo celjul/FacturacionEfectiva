@@ -1,0 +1,15 @@
+<dataset>
+    <tcolonia 
+        NIdColonia="1" 
+        VNombre="Aquiles va la colonia_1" 
+        NCodigoPostal = "43667"
+        NIdMunicipio="1"
+        
+    />
+    <tcolonia 
+        NIdColonia="2"  
+        VNombre="Aquiles va la colonia_2" 
+        NCodigoPostal = "43667"
+        NIdMunicipio="1"
+    />
+</dataset>

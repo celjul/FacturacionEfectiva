@@ -1,0 +1,5 @@
+<dataset>
+	<tusuarios NIdUsuario="1" VLogin="adminadmin" VPassword="administrador" VNombre="Admin" VApellidoPaterno="Admin" VApellidoMaterno="Admin" BActivo="1" />
+	<tusuarios NIdUsuario="2" VLogin="supervisor" VPassword="supervisorpass" VNombre="Supervisor" VApellidoPaterno="SupervisorPaterno" VApellidoMaterno="SupervisorMaterno" BActivo="1" />
+	<tusuarios NIdUsuario="3" VLogin="vendedor" VPassword="vendedor" VNombre="Vendedor" VApellidoPaterno="Vendedor" VApellidoMaterno="Vendedor" BActivo="1" />
+</dataset>

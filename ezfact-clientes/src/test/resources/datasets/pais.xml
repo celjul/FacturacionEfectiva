@@ -1,0 +1,10 @@
+<dataset>
+    <tpais 
+        NIdPais="1" 
+        VNombre="Aquiles va el pais_1"
+    />
+    <tpais 
+        NIdPais="2" 
+        VNombre="Aquiles va el pais_2"
+    />
+</dataset>

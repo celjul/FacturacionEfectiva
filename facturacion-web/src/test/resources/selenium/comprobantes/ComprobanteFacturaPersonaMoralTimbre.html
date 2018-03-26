@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8071/" />
+<title>ComprobanteFacturaPersonaMoralTimbre</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ComprobanteFacturaPersonaMoralTimbre</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/facturacion-web/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#emisor &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=emisor</td>
+	<td>label=Persona Moral Selenium S.A. de C.V.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-sel-emisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=menu-comprobantes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=menu-comprobantes-nuevo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#cbo-tipo-documento &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#cbo-metodo-pago &gt; option[value=&quot;3&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=cbo-tipo-documento</td>
+	<td>label=Factura</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=txt-cliente</td>
+	<td>Selenim</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Selenim Cliente Test S.A de C.V.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ui-id-4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=cbo-metodo-pago</td>
+	<td>label=Efectivo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-numero-cuenta</td>
+	<td>0000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-add-concepto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cantidad</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=txt-codigo</td>
+	<td>00000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>0000000001 - Producto selenium</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ui-id-5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-modal-add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-modal-close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-guardar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.toast-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.toast-message</td>
+	<td>El comprobante esta listo para ser timbrado.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-timbrar</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

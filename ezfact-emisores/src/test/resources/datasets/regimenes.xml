@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<temisorregimen NIdEmisor="1"
+		VRegimen="Régimen de actividades empresariales y profesionales" />
+	<temisorregimen NIdEmisor="2" VRegimen="Régimen general" />
+	<temisorregimen NIdEmisor="2" VRegimen="Régimen simplificado" />
+</dataset>

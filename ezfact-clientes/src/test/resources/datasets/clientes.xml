@@ -1,0 +1,35 @@
+<dataset>
+    <tcliente 
+        NIdCliente="1" 
+        VNombre="Aquiles va el nombre_1" 
+        VApellidoPaterno="Aquiles va el apellido paterno_1"
+        VApellidoMaterno="Aquiles va el apellido materno_1"
+        VRFC="MEIP8606304G6"
+        VRazonComercial="Aquiles va la Razon Comercial_1"
+        VPaginaWeb="Aquiles va la Pagina Web_1"
+        VObservaciones="Aquiles van las Observaciones_1" 
+        NIdTipoPersona = "1"
+    />
+    <tcliente 
+        NIdCliente="2" 
+        VNombre="Aquiles va el nombre_2" 
+        VApellidoPaterno="Aquiles va el apellido paterno_2"
+        VApellidoMaterno="Aquiles va el apellido materno_2"
+        VRFC="MEIP8606304G7"
+        VRazonComercial="Aquiles va la Razon Comercial_2"
+        VPaginaWeb="Aquiles va la Pagina Web_2"
+        VObservaciones="Aquiles van las Observaciones_2" 
+        NIdTipoPersona = "1"
+    />
+    <tcliente 
+        NIdCliente="3" 
+        VNombre="Aquiles va el nombre_3" 
+        VApellidoPaterno="Aquiles va el apellido paterno_3"
+        VApellidoMaterno="Aquiles va el apellido materno_3"
+        VRFC="MEIP8606304G8"
+        VRazonComercial="Aquiles va la Razon Comercial_3"
+        VPaginaWeb="Aquiles va la Pagina Web_3"
+        VObservaciones="Aquiles van las Observaciones_3" 
+        NIdTipoPersona = "1"
+    />
+</dataset>

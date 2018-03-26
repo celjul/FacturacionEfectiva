@@ -1,0 +1,12 @@
+<dataset>
+    <tmunicipio 
+        NIdMunicipio="1" 
+        VNombre="Aquiles va el municipio_1" 
+        NIdEstado="1"
+    />
+    <tmunicipio 
+        NIdMunicipio="2" 
+        VNombre="Aquiles va el municipio_2" 
+        NIdEstado="2"
+    />
+</dataset>

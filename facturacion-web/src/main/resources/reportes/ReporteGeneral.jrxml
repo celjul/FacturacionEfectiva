@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-03-13T00:09:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="762" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="20" uuid="67b63828-0e41-423b-8a64-e46b996e0b8c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Header" mode="Opaque" forecolor="#FFFFFF" backcolor="#5F71E8" hTextAlign="Center" vTextAlign="Middle" fontSize="10" isBold="true"/>
+	<style name="Title" hTextAlign="Center" fontSize="14" isBold="true"/>
+	<style name="Table" vTextAlign="Middle" fontSize="10">
+		<box leftPadding="0"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT} % 2 == 1]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EBEB"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table Header"/>
+	<style name="Detail" style="Table">
+		<box leftPadding="3" rightPadding="3"/>
+	</style>
+	<parameter name="EMISOR" class="java.lang.Long"/>
+	<parameter name="ACTIVO" class="java.lang.Boolean"/>
+	<parameter name="TIPO" class="java.lang.Long"/>
+	<parameter name="CLIENTE" class="java.lang.Long"/>
+	<parameter name="RFC" class="java.lang.String"/>
+	<parameter name="F_INI" class="java.util.Date"/>
+	<parameter name="F_FIN" class="java.util.Date"/>
+	<parameter name="M_INI" class="java.math.BigDecimal"/>
+	<parameter name="M_FIN" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[SELECT
+	*
+FROM
+	vcomprobantes vc
+WHERE
+	($P{ACTIVO} IS NULL OR vc.BActivo = $P{ACTIVO})
+	AND ($P{TIPO} IS NULL OR vc.NIdCatalogo = $P{TIPO})
+	AND ($P{CLIENTE} IS NULL OR vc.NIdCliente = $P{CLIENTE})
+	AND ($P{RFC} IS NULL OR vc.VRFC = $P{RFC})
+	AND vc.NIdEmisor = $P{EMISOR}
+	AND (date(vc.DFechaCreacion) BETWEEN $P{F_INI} AND $P{F_FIN} OR ($P{F_INI} IS NULL OR $P{F_FIN} IS NULL))
+	AND (date(vc.DFechaCreacion) BETWEEN $P{F_INI} AND $P{F_FIN} OR ($P{F_INI} IS NULL OR $P{F_FIN} IS NULL))
+ORDER BY
+	vc.DFechaCreacion DESC,
+	vc.NIdComprobante DESC]]>
+	</queryString>
+	<field name="NIdComprobante" class="java.lang.Long"/>
+	<field name="DFechaCreacion" class="java.sql.Timestamp"/>
+	<field name="VRFC" class="java.lang.String"/>
+	<field name="NIdCliente" class="java.lang.Long"/>
+	<field name="VCliente" class="java.lang.String"/>
+	<field name="Folio" class="java.lang.Integer"/>
+	<field name="BActivo" class="java.lang.Boolean"/>
+	<field name="NIdCatalogo" class="java.lang.Long"/>
+	<field name="VDescripcion" class="java.lang.String"/>
+	<field name="VUUID" class="java.lang.String"/>
+	<field name="NIdEmisor" class="java.lang.Long"/>
+	<field name="NMontoSinIva" class="java.lang.Double"/>
+	<field name="VVentaUnica" class="java.lang.String"/>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement x="545" y="20" width="217" height="15" uuid="2107568b-a1aa-4b8c-a8fc-07476e0363c6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement style="Detail" x="0" y="0" width="130" height="15" uuid="2057d8fb-0ba5-4e01-8dad-16621aed80c9">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[Fecha de creación:]]></text>
+				</staticText>
+				<textField pattern="dd-MM-yyyy">
+					<reportElement style="Detail" x="130" y="0" width="87" height="15" isRemoveLineWhenBlank="true" uuid="103d26df-a27b-484e-b7a2-8cd3b84c362d">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="762" height="20" uuid="6f527865-0c09-4cd5-9a74-6eee4f028282">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Reporte de CFDI]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement key="" style="Header" mode="Opaque" x="0" y="0" width="762" height="28" uuid="998a2c99-222d-48fa-9fbf-1e15cc91df0e">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement style="Header" x="0" y="0" width="25" height="28" uuid="2cc2078e-892d-4ca4-b2c2-6cdffded828b">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[#]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="25" y="0" width="60" height="28" uuid="d6eb0d6f-4d5a-4712-9a14-ab385fa1349d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Fecha de
+Creación]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="85" y="0" width="90" height="28" uuid="4a2c60de-393d-434a-9f88-39dea668910b">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[R. F. C.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="175" y="0" width="135" height="28" uuid="7c43253e-9786-494e-a0a0-b0cfbc173f5c">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Cliente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="310" y="0" width="65" height="28" uuid="3010621b-bfa9-4a26-b6f0-aaa6f3264552">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Estatus]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="375" y="0" width="55" height="28" uuid="f49ef920-1d1c-469d-a10a-6a10bb3a90b1">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Folio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="545" y="0" width="217" height="28" uuid="7a616968-6b0a-4e06-af0e-99639dbb1a60">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[UUID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="470" y="0" width="75" height="28" uuid="3bf27e1f-5a7d-4ee6-91d2-e49bb1fa66c0">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Monto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="430" y="0" width="40" height="28" uuid="a4d857fb-8097-4339-a434-3e51ff6463f0">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[No.Vta]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<frame>
+				<reportElement style="Table" x="0" y="0" width="762" height="15" uuid="5c6dd80e-0c46-4f88-b6e7-576dbdfb11f9">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="0" y="0" width="25" height="15" uuid="f676e984-9687-4607-b8b9-c97e3aa3bf32">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="25" y="0" width="60" height="15" uuid="e6697779-a66f-4818-ad06-224ae3db8549"/>
+					<textFieldExpression><![CDATA[$F{DFechaCreacion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="85" y="0" width="90" height="15" uuid="653e8683-1b06-421b-bbce-248d486456a6"/>
+					<textFieldExpression><![CDATA[$F{VRFC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="175" y="0" width="135" height="15" isPrintWhenDetailOverflows="true" uuid="68ba743b-f036-4bac-afbe-25aab4d15442"/>
+					<textFieldExpression><![CDATA[$F{VCliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="310" y="0" width="65" height="15" isPrintWhenDetailOverflows="true" uuid="0b81e56c-4b8e-45e6-8f7e-1b908bf1197d"/>
+					<textFieldExpression><![CDATA[$F{BActivo} == null ? "No Generado" : ($F{BActivo} ? "Activo" : "Cancelado")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="375" y="0" width="55" height="15" isPrintWhenDetailOverflows="true" uuid="06502854-0f0c-42ea-974f-5888c8444a9f"/>
+					<textFieldExpression><![CDATA[$F{Folio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="545" y="0" width="217" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f1"/>
+					<textFieldExpression><![CDATA[$F{VUUID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="$ #,##0.00">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="470" y="0" width="75" height="15" uuid="1e501139-35b9-44d6-8ce5-fa38c4ccb4e3">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{NMontoSinIva}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="430" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f2"/>
+					<textFieldExpression><![CDATA[$F{VVentaUnica}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement key="" x="545" y="10" width="217" height="15" uuid="c4867f8b-65a5-41f8-9a7e-45b391017a9d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="157" height="15" uuid="0c3e010b-dfad-4b45-896f-b14d1dd49dcd">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement x="157" y="0" width="60" height="15" uuid="c9acb734-6429-41e6-9f86-fe5ca9113249"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<noData>
+		<band height="81">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="762" height="20" uuid="e1e1368a-1e3a-4a7a-b736-72018b066e9d">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Reporte de CFDI]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="545" y="20" width="217" height="15" uuid="1e5310d0-ad96-4edb-8e2d-fbc002ab0320">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement style="Detail" x="0" y="0" width="130" height="15" uuid="8a08f547-fda0-4566-bd11-a4134725e076">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[Fecha de creación:]]></text>
+				</staticText>
+				<textField pattern="dd-MM-yyyy">
+					<reportElement style="Detail" x="130" y="0" width="70" height="15" isRemoveLineWhenBlank="true" uuid="0d58700f-54b9-4293-9384-49b2634e6220">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement key="" style="Header" mode="Opaque" x="0" y="38" width="762" height="28" uuid="0c25a0b8-51b8-42d7-8f87-dd3d1aee5b0e">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement style="Header" x="0" y="0" width="25" height="28" uuid="18928c42-313f-46ae-9cb9-f26a49838b72">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[#]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="25" y="0" width="60" height="28" uuid="b137ccf1-19ef-4230-9647-8bf12ec582f1">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Fecha de
+Creación]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="85" y="0" width="90" height="28" uuid="fe5a1513-e960-4846-acc4-0a8b27c9b5c9">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[R. F. C.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="170" y="0" width="190" height="28" uuid="579d2d9b-f10a-42ea-82aa-7a1bcbb031b4">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Cliente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="360" y="0" width="45" height="28" uuid="a1d45505-1d52-4422-9c0a-322e295258aa">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Estatus]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="405" y="0" width="60" height="28" uuid="f61f4894-4579-466f-a754-c688f4b94f60">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Folio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="545" y="0" width="217" height="28" uuid="9326cc59-0fdd-478f-8a82-9c05d082ad5e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[UUID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Header" x="465" y="0" width="80" height="28" uuid="8f2da148-1ae7-47f1-a20b-ae9aadbd5e51">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<text><![CDATA[Monto]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement style="Detail" x="0" y="66" width="762" height="15" uuid="afaca33b-e602-4119-bd4d-b3c41de81dfb">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No se encontraron elementos]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8071/" />
+<title>ProductoCompleto</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ProductoCompleto</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/facturacion-web/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>luis.cardenas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#emisor &gt; option[value=&quot;1&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=emisor</td>
+	<td>label=Persona Moral Selenium S.A. de C.V.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-sel-emisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=menu-config</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=menu-config-prod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=menu-config-prod-nuevo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#cbo-unidad-medida &gt; option[value=&quot;9&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-codigo</td>
+	<td>0000000001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-descripcion</td>
+	<td>Producto selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=txt-precio</td>
+	<td>1.00</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=check-iva</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=cbo-unidad-medida</td>
+	<td>label=Pieza</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-prod-new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.toast-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.toast-message</td>
+	<td>El producto se ha registrado correctamente.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<temisorcertificado NIdCertificado="1" VCertificado="c3rt1f1c4d0"
+		VClave="cl4v3" DFin="2015-12-31 23:59:59" DInicio="2013-01-01 00:00:00"
+		VNombre="Certificado VGM" VPassword="changeme" VSerie="00001000000202569219"
+		NIdEmisor="1" />
+	<temisorcertificado NIdCertificado="2" VCertificado="c3rt1f1c4d0"
+		VClave="cl4v3" DFin="2016-12-31 23:59:59" DInicio="2014-01-01 00:00:00"
+		VNombre="Certificado Apple" VPassword="changeme" VSerie="00001000000202569220"
+		NIdEmisor="2" />
+</dataset>

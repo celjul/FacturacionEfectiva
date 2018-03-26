@@ -1,0 +1,5 @@
+<dataset>
+	<tpuestos NIdPuesto="1" VNombre="Administrador" VDescripcion="Administrador del sistema" />
+	<tpuestos NIdPuesto="2" VNombre="Supervisor" VDescripcion="Supervisor de vendedores" NIdPuestoSuperior="1"/>
+	<tpuestos NIdPuesto="3" VNombre="Vendedor" VDescripcion="Usuario vendedor" NIdPuestoSuperior="2"/>
+</dataset>

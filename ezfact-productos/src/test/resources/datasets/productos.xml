@@ -1,0 +1,9 @@
+<dataset>
+	<tproductos NIdProducto="1" VCodigo="9234986240021" VNombre="Producto 1" NIdUnidadMedida="1" DPrecio="0.50" />
+	<tproductos NIdProducto="2" VCodigo="9234986240022" VNombre="Producto 2" NIdUnidadMedida="2" DPrecio="120.50" />
+	<tproductos NIdProducto="3" VCodigo="9234986240023" VNombre="Producto 3" NIdUnidadMedida="3" DPrecio="6.78" />
+	<tproductos NIdProducto="4" VCodigo="9234986240024" VNombre="Producto 4" NIdUnidadMedida="2" DPrecio="120.50" />
+	<tproductos NIdProducto="5" VCodigo="9234986240025" VNombre="Producto 5" NIdUnidadMedida="1" DPrecio="16.78" />
+	<tproductos NIdProducto="6" VCodigo="9234986240026" VNombre="Producto 6" NIdUnidadMedida="2" DPrecio="10.50" />
+	<tproductos NIdProducto="7" VCodigo="9234986240027" VNombre="Producto 7" NIdUnidadMedida="3" DPrecio="2.78" />
+</dataset>

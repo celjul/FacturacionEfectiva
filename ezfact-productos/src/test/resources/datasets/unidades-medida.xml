@@ -1,0 +1,5 @@
+<dataset>
+	<tcatalogo VTipo="unidadMedida" NIdCatalogo="1" VDescripcion="Pieza" />
+	<tcatalogo VTipo="unidadMedida" NIdCatalogo="2" VDescripcion="Caja" />
+	<tcatalogo VTipo="unidadMedida" NIdCatalogo="3" VDescripcion="Litro" />
+</dataset>

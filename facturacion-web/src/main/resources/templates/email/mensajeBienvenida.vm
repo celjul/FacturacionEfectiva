@@ -1,0 +1,221 @@
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <title>Facturacion Efectiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+            width: 100% !important;
+            height: 100%
+        }
+
+
+        table.head-wrap {
+            width: 100%
+        }
+
+        .header.container table td.logo {
+            padding: 15px
+        }
+
+        .header.container table td.label {
+            padding: 15px;
+            padding-left: 0
+        }
+
+        table.body-wrap {
+            width: 100%
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+            "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #000
+        }
+
+        h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+            font-size: 60%;
+            color: #6f6f6f;
+            line-height: 0;
+            text-transform: none
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 27px
+        }
+
+        p, ul {
+            margin-bottom: 10px;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.6
+        }
+
+        p.lead {
+            font-size: 17px
+        }
+
+        p.last {
+            margin-bottom: 0
+        }
+
+        .container {
+            display: block !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            clear: both !important
+        }
+
+        .content {
+            padding: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block
+        }
+
+        .content table {
+            width: 100%
+        }
+
+        .column {
+            width: 300px;
+            float: left
+        }
+
+        .column tr td {
+            padding: 15px
+        }
+
+        .column table {
+            width: 100%
+        }
+
+        .social .column {
+            width: 280px;
+            min-width: 279px;
+            float: left
+        }
+
+        .clear {
+            display: block;
+            clear: both
+        }
+
+        div[class="column"] {
+            width: auto !important;
+            float: none !important
+        }
+
+        table.social div[class="column"] {
+            width: auto !important
+        }
+        .aviso {
+            color: #fff;
+            font-size: 8px;
+            max-width: 700px;
+            position: relative;
+        }
+        .mensaje {
+            color: #000;
+            font-size: 12px;
+            max-width: 500px;
+            position: relative;
+        }
+    </style><!-- ${host}/recursos/img/mihabitat.png -->
+</head>
+<body >
+<table border='0' cellpadding='0' cellspacing='0' width='100%' style='background-color: #FFF; text-align: center; font-size: 14px; font-family: verdana;'>
+    <tr>
+        <td>
+            <img src='http://logos.bstmexico.com/Logo_FACTURACIONEFECTIVA_SMALL.png' align='center' width='200' />
+
+        </td>
+
+
+        <td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;' >&nbsp;</a><br />&nbsp;</td>
+        <td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;' >&nbsp;</a><br />&nbsp;</td>
+        <td><br /><a href='#' style='color: #FFFFFF;text-decoration: none;'>&nbsp;</a><br />&nbsp;</td>
+    </tr>
+    <tr style='background-color: #FFFFFF;'>
+        <td colspan='5' align='center'>
+            <br />
+            <p style='color: #000; font-size: 30px;'>${title} ${persona}</p>
+        </td>
+    </tr>
+    <tr style='background-color: #FFFFFF;'>
+        <td colspan='5' align='center'>
+
+            <br>
+            <p class="mensaje" style="text-align: left;">
+                <strong>${name}</strong>
+            </p>
+
+        </td>
+    </tr>
+    <tr style='background-color: #FFFFFF;'>
+        <td colspan='5' align='center'>
+
+            <br>
+            <p class="mensaje" style="text-align: center;">
+                ${message}
+            </p>
+
+        </td>
+    </tr>
+    <tr style='background-color: #FFFFFF;'>
+        <td colspan='5' align='center'>
+
+            <br>
+            <p class="mensaje" style="text-align: center;">
+                ${usuario}
+
+            </p>
+            <p class="mensaje" style="text-align: center;">
+                ${contrasena}
+
+            </p>
+
+        </td>
+
+    </tr>
+    <tr  style='background-color: #fff;'>
+        <td colspan='5'>
+            <img src='http://bstmexico.com/logos/fe/BienvenidaFacturacionEfectiva.jpg' align='center' width='100%' />
+        </td>
+    </tr>
+    <tr style='background-color: #12549e!important;'>
+        <td colspan='5' align='center'>
+            <br />
+            <p style='color:#fff!important;'>
+                ${messageFooter}
+            </p>
+            <br /><br />
+        </td>
+    </tr>
+    <!--<tr  style='background-color: #6ca0db'>
+        <td colspan='5'>
+            <p style='color: #FFFFFF; font-size: 12px; text-align: center;'>
+                <br />
+                <a href='mailto:hola@mihabitat.com.mx' style='color: #FFFFFF;text-decoration: none;'>hola@facturacionefectiva.com.mx</a>&nbsp;&nbsp; ·
+                &nbsp;&nbsp;&nbsp;<a href='tel:5512041299' style='color: #FFFFFF;text-decoration: none;'>(55) 1204-1299</a>&nbsp;&nbsp; ·
+                &nbsp;&nbsp;&nbsp;<a href='' style='color: #FFFFFF;text-decoration: none;'></a><br />
+                Un producto de BSTMéxico Tecnologías de Información &nbsp;&nbsp;|&nbsp;&nbsp; <a href='http://www.bstmexico.com/' style='color: #FFFFFF;text-decoration: none;' target='_blank'>facturacionefectiva.com/</a>
+                <br /><br />
+            </p>
+        </td>
+    </tr>-->
+</table>
+</body>
+</html>
