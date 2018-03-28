@@ -46,6 +46,15 @@ $(function() {
 								type="file" name="file">
 						</div>
 					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<select name="id_tipoPago" class="form-control" id="id_status" required="required">
+									  	<option value="1">Ingreso </option>
+										<option value="2">Egreso</option>
+										<option value="71694">Complemento de Pago</option>
+							</select>
+						</div>
+					</div>
 					<div class="panel-footer text-right">
 						<input type="submit" value="Facturar" />
 					</div>

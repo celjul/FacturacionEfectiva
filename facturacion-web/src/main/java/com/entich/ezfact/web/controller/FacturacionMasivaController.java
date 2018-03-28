@@ -33,6 +33,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.entich.commons.catalogo.factory.OpcionDeCatalogoFactory;
@@ -85,9 +86,10 @@ public class FacturacionMasivaController {
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public String upload(@RequestParam("file") MultipartFile file, Model model, HttpSession session) {
+	public String upload(@RequestParam("file") MultipartFile file, Model model, HttpSession session, WebRequest request) {
 
 		Emisor emisor = (Emisor) session.getAttribute("emisorSession");
+		Long id = Long.valueOf(request.getParameter("id_tipoPago"));
 		Map<Integer, Comprobante> comprobantes = new HashMap<>();
 		Set<FacturaMasivaDto> facturas = new HashSet<>();
 
@@ -181,7 +183,7 @@ public class FacturacionMasivaController {
 						comprobante.setForma((FormaPago) catalogoService.get(FormaPago.class, formaPago));
 						comprobante.setLugarDeExpedicion(lugarExpedicion);
 						comprobante.setMetodo((MetodoPago) catalogoService.get(MetodoPago.class, metodoPago));
-						comprobante.setTipo((TipoDocumento) OpcionDeCatalogoFactory.newInstance(TipoDocumento.class, 1l));
+						comprobante.setTipo((TipoDocumento) OpcionDeCatalogoFactory.newInstance(TipoDocumento.class, id));
 						comprobante.setIdVentaUnica(idVentaUnica);
 					}
 
