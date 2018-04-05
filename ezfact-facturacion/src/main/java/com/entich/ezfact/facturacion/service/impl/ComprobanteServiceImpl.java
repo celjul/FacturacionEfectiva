@@ -484,12 +484,13 @@ public class ComprobanteServiceImpl implements ComprobanteService {
             comprobante.setDescuento(desc);
         }
 		comprobante.setMoneda(CMoneda.MXN);
-//		comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
 		if (remision.getTipo().getId() == 1) {
 			comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
-		} else {
+		} else if(remision.getTipo().getId() == 2){
 			comprobante.setTipoDeComprobante(CTipoDeComprobante.E);
-		}
+		}/*else {
+			comprobante.setTipoDeComprobante(CTipoDeComprobante.P);
+			}*/
 		comprobante.setMetodoPago(getMetodoPago(remision.getMetodo()));
 		comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
 		comprobante.setEmisor(getEmisor(remision.getEmisor()));
@@ -498,6 +499,35 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 		comprobante.setImpuestos(getImpuestos(comprobante.getConceptos()));
 		comprobante.setTotal(getTotal(comprobante));
 		return document;
+		/*
+		comprobante.setAddenda(arg0);
+		comprobante.setCertificado("3.3");
+		comprobante.setCfdiRelacionados(arg0);
+		comprobante.setComplementoArray(arg0);
+		comprobante.setConceptos(arg0);
+		comprobante.setCondicionesDePago(arg0);
+		comprobante.setConfirmacion(arg0);
+		comprobante.setDescuento(arg0);
+		comprobante.setEmisor(arg0);
+		comprobante.setFecha(arg0);
+		comprobante.setFolio(arg0);
+		comprobante.setFormaPago(arg0);
+		comprobante.setImpuestos(arg0);
+		comprobante.setLugarExpedicion(arg0);
+		comprobante.setMetodoPago(arg0);
+		comprobante.setMoneda(arg0);
+		comprobante.setNil();
+		comprobante.setNoCertificado(arg0);
+		comprobante.setReceptor(arg0);
+		comprobante.setSello(arg0);
+		comprobante.setSerie(arg0);
+		comprobante.setSubTotal(arg0);
+		comprobante.setTipoCambio(arg0);
+		comprobante.setTipoDeComprobante(arg0);
+		comprobante.setTotal(arg0);
+		comprobante.setVersion(arg0);
+		*/
+		
 	}
 
 	private BigDecimal getTotal(mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante comprobante) {
