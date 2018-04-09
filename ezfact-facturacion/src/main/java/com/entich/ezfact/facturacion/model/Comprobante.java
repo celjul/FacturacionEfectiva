@@ -134,8 +134,19 @@ public class Comprobante {
     
     @Column(name = "VVentaUnica", nullable = true)
     private String idVentaUnica;
+    
+    @Column(name = "VUUIDpadre", nullable = true)
+    private String VUUIDpadre;
+    
+    public String getVUUIDpadre() {
+		return VUUIDpadre;
+	}
 
-    public Comprobante() {
+	public void setVUUIDpadre(String vUUIDpadre) {
+		VUUIDpadre = vUUIDpadre;
+	}
+
+	public Comprobante() {
     }
 
     public Long getId() {

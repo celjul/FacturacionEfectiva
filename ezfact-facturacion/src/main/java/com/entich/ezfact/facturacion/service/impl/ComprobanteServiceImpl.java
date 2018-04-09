@@ -66,6 +66,7 @@ import com.mx.profact.ws.TimbradoSoap;
 import com.mysql.jdbc.log.Log;
 
 import mx.gob.sat.cfd.x3.ComprobanteDocument;
+import mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante.CfdiRelacionados;
 import mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante.Complemento;
 import mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante.Conceptos;
 import mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante.Emisor;
@@ -83,6 +84,7 @@ import mx.gob.sat.sitioInternet.cfd.catalogos.CMoneda;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CPais;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CRegimenFiscal;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CTipoDeComprobante;
+import mx.gob.sat.sitioInternet.cfd.catalogos.CTipoRelacion;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CTipoFactor;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CUsoCFDI;
 import mx.gob.sat.timbreFiscalDigital.TimbreFiscalDigitalDocument;
@@ -95,9 +97,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
-//import com.sedeb2b.cfdiws.CFDi;
-//import com.sedeb2b.cfdiws.CFDiException_Exception;
-//import com.sedeb2b.cfdiws.CFDiService;
+
 
 @Service
 public class ComprobanteServiceImpl implements ComprobanteService {
@@ -472,61 +472,53 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 
 	private ComprobanteDocument createDocument(Comprobante remision, Certificado certificado) {
 		ComprobanteDocument document = ComprobanteDocument.Factory.newInstance();
+		 
 		ComprobanteDocument.Comprobante comprobante = document.addNewComprobante();
+		
+		if(remision.getTipo().getId()!=71694){
+			if (remision.getTipo().getId() == 1) {
+				comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
+			} else {
+				comprobante.setTipoDeComprobante(CTipoDeComprobante.E);
+			}
+			comprobante.setVersion("3.3");
+			comprobante.setFecha(getDateFormat());
+			comprobante.setFormaPago(getFormaPago(remision.getForma()));
+			comprobante.setCondicionesDePago(remision.getCondicion());
+			comprobante.setSubTotal(getSubtotal(remision.getConceptos()));
+			BigDecimal desc = getDescuento(remision);
+	        if (desc != null && desc.compareTo(BigDecimal.ZERO) > 0) {
+	            comprobante.setDescuento(desc);
+	        }
+			comprobante.setMoneda(CMoneda.MXN);
+			
+			comprobante.setMetodoPago(getMetodoPago(remision.getMetodo()));
+			comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
+			comprobante.setEmisor(getEmisor(remision.getEmisor()));
+			comprobante.setReceptor(getReceptor(remision.getCliente()));
+			comprobante.setConceptos(getConceptos(remision.getConceptos()));
+			comprobante.setImpuestos(getImpuestos(comprobante.getConceptos()));
+			comprobante.setTotal(getTotal(comprobante));
+			return document;
+		}else {
+			ComprobanteDocument.Comprobante.CfdiRelacionados cfdirelacionado = comprobante.addNewCfdiRelacionados();
 
-		comprobante.setVersion("3.3");
-		comprobante.setFecha(getDateFormat());
-		comprobante.setFormaPago(getFormaPago(remision.getForma()));
-		comprobante.setCondicionesDePago(remision.getCondicion());
-		comprobante.setSubTotal(getSubtotal(remision.getConceptos()));
-		BigDecimal desc = getDescuento(remision);
-        if (desc != null && desc.compareTo(BigDecimal.ZERO) > 0) {
-            comprobante.setDescuento(desc);
-        }
-		comprobante.setMoneda(CMoneda.MXN);
-		if (remision.getTipo().getId() == 1) {
-			comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
-		} else if(remision.getTipo().getId() == 2){
-			comprobante.setTipoDeComprobante(CTipoDeComprobante.E);
-		}/*else {
 			comprobante.setTipoDeComprobante(CTipoDeComprobante.P);
-			}*/
-		comprobante.setMetodoPago(getMetodoPago(remision.getMetodo()));
-		comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
-		comprobante.setEmisor(getEmisor(remision.getEmisor()));
-		comprobante.setReceptor(getReceptor(remision.getCliente()));
-		comprobante.setConceptos(getConceptos(remision.getConceptos()));
-		comprobante.setImpuestos(getImpuestos(comprobante.getConceptos()));
-		comprobante.setTotal(getTotal(comprobante));
-		return document;
-		/*
-		comprobante.setAddenda(arg0);
-		comprobante.setCertificado("3.3");
-		comprobante.setCfdiRelacionados(arg0);
-		comprobante.setComplementoArray(arg0);
-		comprobante.setConceptos(arg0);
-		comprobante.setCondicionesDePago(arg0);
-		comprobante.setConfirmacion(arg0);
-		comprobante.setDescuento(arg0);
-		comprobante.setEmisor(arg0);
-		comprobante.setFecha(arg0);
-		comprobante.setFolio(arg0);
-		comprobante.setFormaPago(arg0);
-		comprobante.setImpuestos(arg0);
-		comprobante.setLugarExpedicion(arg0);
-		comprobante.setMetodoPago(arg0);
-		comprobante.setMoneda(arg0);
-		comprobante.setNil();
-		comprobante.setNoCertificado(arg0);
-		comprobante.setReceptor(arg0);
-		comprobante.setSello(arg0);
-		comprobante.setSerie(arg0);
-		comprobante.setSubTotal(arg0);
-		comprobante.setTipoCambio(arg0);
-		comprobante.setTipoDeComprobante(arg0);
-		comprobante.setTotal(arg0);
-		comprobante.setVersion(arg0);
-		*/
+			comprobante.setVersion("3.3");
+			cfdirelacionado.addNewCfdiRelacionado().setUUID(remision.getVUUIDpadre());
+			cfdirelacionado.setTipoRelacion(CTipoRelacion.X_05);
+			comprobante.setFecha(getDateFormat());
+			comprobante.setFormaPago(getFormaPago(remision.getForma()));
+			comprobante.setMoneda(CMoneda.MXN);
+			comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
+			comprobante.setEmisor(getEmisor(remision.getEmisor()));
+			comprobante.setReceptor(getReceptor(remision.getCliente()));
+			comprobante.setTotal(BigDecimal.ZERO);
+			comprobante.setSubTotal(BigDecimal.ZERO);
+			return document;
+		}
+		
+		
 		
 	}
 
@@ -550,8 +542,8 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 		try {
 			response = new TimbradoResponse(cfdi.timbraCFDI(user,
 					new String(Base64.encode(FileUtils.readFileToByteArray(xmlFile))), String.valueOf(id)));
-
-			if (response != null) {
+			
+			if (response != null  || !response.UUID.equals("") || response.UUID != null) {
 				switch (response.getCodigo()) {
 				case "0":
 					ComprobanteDocument document = ComprobanteDocument.Factory
@@ -561,7 +553,8 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 							"QR" + File.separator + xmlFile.getName().replace(".xml", ".png")));
 					break;
 				default:
-					throw new ServiceException(response.getMensaje());
+					System.out.println(response.getMensaje());
+					//throw new ServiceException(response.getMensaje());
 				}
 			}
 		} catch (IOException ex) {
