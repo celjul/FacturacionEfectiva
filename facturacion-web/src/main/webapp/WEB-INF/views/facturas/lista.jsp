@@ -40,6 +40,7 @@
 					<div class="panel-body" id="panelfiltro">
 						<form role="form" id="form-list" method="get"
 							novalidate="novalidate">
+							<input type="hidden" id="lblclave" name="lblclave" value="1">
 							<fieldset>
 								<div class="row">
 									<div class="col-md-2">
@@ -128,6 +129,7 @@
 											</select>
 										</div>
 									</div>
+						
 								</div>
 
 								<div class="row">
@@ -146,6 +148,7 @@
 									</div>
 								</div>
 							</fieldset>
+
 						</form>
 					</div>
 				</div>
@@ -219,6 +222,23 @@
 									</tr>
 								</tbody>
 							</table>
+							<ul class="pagination">
+						  <li class="disabled">
+						    <a href="#">&laquo;</a>
+						  </li>
+						  <li class="active">
+						    <a href="#" onClick="document.location.href=getUrl(1);" >1 <span class="sr-only">(página actual)</span></a>
+						  </li>
+						  <li >
+						    <a href="#" onClick="document.location.href=getUrl(2);" >2 <span class="sr-only">(página actual)</span></a>
+						  </li>
+						  						  <li >
+						    <a href="#" onClick="document.location.href=getUrl(3);" >3 <span class="sr-only">(página actual)</span></a>
+						  </li>
+						  						  <li >
+						    <a href="#" onClick="document.location.href=getUrl(4);" >4 <span class="sr-only">(página actual)</span></a>
+						  </li>
+						</ul>
 							</form>
 						</div>
 					</div>
@@ -249,8 +269,11 @@
 								</td>
 							</tr>
 							</tbody>
+							
 						</table>
+						
 					</div>
+					
 					<div class="row">
 						<div class="panel-body">
 							<h4 class="page-header">Enviar tambien a:</h4>
@@ -291,6 +314,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 	<div id="myModalayuda" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -327,6 +351,11 @@
             $("#panelfiltro").slideToggle("slow");
          });
       });
+      function getUrl(id)
+      {
+    	  document.getElementById("lblclave").value = id;
+          return "${contextPath}/app/comprobantes/list";
+      }
    </script>
 </body>
 </html>
