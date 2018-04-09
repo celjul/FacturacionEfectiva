@@ -30,4 +30,6 @@ public interface ComprobanteHelperService {
 	Collection<ComprobanteHelper> find(Emisor emisor, Date inicio, Date fin, 
 			BigDecimal montoMin, BigDecimal montoMax, Cliente cliente,
 			TipoDocumento tipo, Boolean estatus, String nombreCliente);
+
+	Collection<ComprobanteHelper> findOnly50(Emisor emisor,int id);
 }

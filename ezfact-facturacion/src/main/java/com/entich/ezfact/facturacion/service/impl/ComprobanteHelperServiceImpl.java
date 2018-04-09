@@ -76,4 +76,9 @@ public class ComprobanteHelperServiceImpl implements ComprobanteHelperService {
 	public Collection<ComprobanteHelper> findAll(Emisor emisor) {
 		return comprobanteDao.find(emisor, null, null, null, null, null, null, null, null);
 	}
+	
+	@Override
+	public Collection<ComprobanteHelper> findOnly50(Emisor emisor, int id) {
+		return comprobanteDao.findOnly50(emisor, null, null, null, null, null, null, null, null,id);
+	}
 }

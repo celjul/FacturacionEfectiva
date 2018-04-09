@@ -107,4 +107,64 @@ public class ComprobanteHelperDaoImpl extends GenericHibernateDaoImpl<Comprobant
             throw new DataAccessException(message, ex);
         }
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional(readOnly = true)
+    @Override
+    public Collection<ComprobanteHelper> findOnly50(Emisor emisor, Date inicio, Date fin,
+                                              BigDecimal montoMin, BigDecimal montoMax, Cliente cliente,
+                                              TipoDocumento tipo, Boolean estatus, String nombreCliente,int idClave) {
+        try {
+            Criteria criteria = sessionFactory.getCurrentSession()
+                    .createCriteria(getType());
+            criteria.add(Restrictions.eq("emisor", emisor.getId()));
+
+            if (inicio != null && fin != null) {
+                criteria.add(Restrictions.between("fechaCreacion", inicio, fin));
+            } else {
+                LOG.warn("No se aplico el filtro, ya que faltó alguno de los paramatros de fecha");
+            }
+
+            if (montoMin != null && montoMax != null) {
+                criteria.add(Restrictions.between("montoConIVA", montoMin, montoMax));
+            } else {
+                LOG.warn("No se aplico el filtro, ya que faltó alguno de los paramatros de montos");
+            }
+
+            if (cliente != null && cliente.getId() != null) {
+                criteria.add(Restrictions.eq("idCliente", cliente.getId()));
+            }
+
+            if (cliente != null && StringUtils.isNotBlank(cliente.getRfc())) {
+                criteria.add(Restrictions.like("rfc", cliente.getRfc()));
+            }
+
+            if (nombreCliente != null) {
+                cliente = ClienteFactory.newInstance(ClientePersonaFisica.class);
+                ((ClientePersonaFisica) cliente).setNombre(nombreCliente);
+                criteria.add(Restrictions.like("cliente", "%"+ ((ClientePersonaFisica) cliente).getNombre() + "%"));
+            }
+            
+            if (tipo != null && tipo.getId() != null) {
+                criteria.add(Restrictions.eq("tipo", tipo.getId()));
+            }
+
+            if (estatus != null) {
+                criteria.add(Restrictions.eq("estatus", estatus));
+            }
+
+            criteria.addOrder(Order.desc("fechaCreacion"));
+            criteria.addOrder(Order.desc("id"));
+            criteria.setFirstResult(idClave*50);
+            criteria.setMaxResults(50);
+            
+            return criteria.list();
+        } catch (HibernateException ex) {
+            String message = String.format(
+                    "Error al recuperar los objetos del tipo {%s} desde la base "
+                            + "de datos.", getType().getSimpleName());
+            LOG.error(message, ex);
+            throw new DataAccessException(message, ex);
+        }
+    }
 }

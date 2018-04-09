@@ -505,23 +505,7 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 			comprobante.setImpuestos(getImpuestos(comprobante.getConceptos()));
 			comprobante.setTotal(getTotal(comprobante));
 			return document;
-		}/*else {
-			ComprobanteDocument.Comprobante.CfdiRelacionados cfdirelacionado = comprobante.addNewCfdiRelacionados();
-
-			comprobante.setTipoDeComprobante(CTipoDeComprobante.P);
-			comprobante.setVersion("3.3");
-			cfdirelacionado.addNewCfdiRelacionado().setUUID(remision.getVUUIDpadre());
-			
-			comprobante.setFecha(getDateFormat());
-			comprobante.setFormaPago(getFormaPago(remision.getForma()));
-			comprobante.setMoneda(CMoneda.MXN);
-			comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
-			comprobante.setEmisor(getEmisor(remision.getEmisor()));
-			comprobante.setReceptor(getReceptor(remision.getCliente()));
-			comprobante.setTotal(BigDecimal.ZERO);
-			comprobante.setSubTotal(BigDecimal.ZERO);
-			return document;
-		}*/
+		}
 		
 
 	private BigDecimal getTotal(mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante comprobante) {
@@ -555,8 +539,7 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 							"QR" + File.separator + xmlFile.getName().replace(".xml", ".png")));
 					break;
 				default:
-					System.out.println(response.getMensaje());
-					//throw new ServiceException(response.getMensaje());
+					throw new ServiceException(response.getMensaje());
 				}
 			}
 		} catch (IOException ex) {
