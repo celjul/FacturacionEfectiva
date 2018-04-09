@@ -188,9 +188,8 @@ public class FacturacionMasivaController {
 							comprobante.setMetodo((MetodoPago) catalogoService.get(MetodoPago.class, metodoPago));
 							comprobante.setTipo((TipoDocumento) OpcionDeCatalogoFactory.newInstance(TipoDocumento.class, id));
 							comprobante.setIdVentaUnica(idVentaUnica);
-							if(id.equals("71694")){
-								comprobante.setVUUIDpadre(uuidpadre);
-							}
+							if(id.equals("71694")){	
+								comprobante.setVUUIDpadre(uuidpadre);}
 						}
 	
 						Concepto concepto = new Concepto();

@@ -52,7 +52,6 @@ $(function() {
 									  	<option value="1">Ingreso </option>
 										<option value="2">Egreso</option>
 										<option value="71694">Complemento de Pago</option>
-										<option value="71695">Complemento de Pago sin UUID</option>
 							</select>
 						</div>
 					</div>

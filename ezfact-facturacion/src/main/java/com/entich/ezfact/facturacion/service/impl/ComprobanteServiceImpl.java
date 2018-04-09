@@ -475,10 +475,16 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 		 
 		ComprobanteDocument.Comprobante comprobante = document.addNewComprobante();
 		
-		if(remision.getTipo().getId()!=71694){
+		
 			if (remision.getTipo().getId() == 1) {
 				comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
-			} else {
+			} else if(remision.getTipo().getId()==71694){
+				comprobante.setTipoDeComprobante(CTipoDeComprobante.I);
+				ComprobanteDocument.Comprobante.CfdiRelacionados cfdirelacionado = comprobante.addNewCfdiRelacionados();
+				cfdirelacionado.addNewCfdiRelacionado().setUUID(remision.getVUUIDpadre());
+				cfdirelacionado.setTipoRelacion(CTipoRelacion.X_07);
+			}
+			else{
 				comprobante.setTipoDeComprobante(CTipoDeComprobante.E);
 			}
 			comprobante.setVersion("3.3");
@@ -491,7 +497,6 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 	            comprobante.setDescuento(desc);
 	        }
 			comprobante.setMoneda(CMoneda.MXN);
-			
 			comprobante.setMetodoPago(getMetodoPago(remision.getMetodo()));
 			comprobante.setLugarExpedicion(remision.getLugarDeExpedicion());
 			comprobante.setEmisor(getEmisor(remision.getEmisor()));
@@ -500,13 +505,13 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 			comprobante.setImpuestos(getImpuestos(comprobante.getConceptos()));
 			comprobante.setTotal(getTotal(comprobante));
 			return document;
-		}else {
+		}/*else {
 			ComprobanteDocument.Comprobante.CfdiRelacionados cfdirelacionado = comprobante.addNewCfdiRelacionados();
 
 			comprobante.setTipoDeComprobante(CTipoDeComprobante.P);
 			comprobante.setVersion("3.3");
 			cfdirelacionado.addNewCfdiRelacionado().setUUID(remision.getVUUIDpadre());
-			cfdirelacionado.setTipoRelacion(CTipoRelacion.X_05);
+			
 			comprobante.setFecha(getDateFormat());
 			comprobante.setFormaPago(getFormaPago(remision.getForma()));
 			comprobante.setMoneda(CMoneda.MXN);
@@ -516,11 +521,8 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 			comprobante.setTotal(BigDecimal.ZERO);
 			comprobante.setSubTotal(BigDecimal.ZERO);
 			return document;
-		}
+		}*/
 		
-		
-		
-	}
 
 	private BigDecimal getTotal(mx.gob.sat.cfd.x3.ComprobanteDocument.Comprobante comprobante) {
 
