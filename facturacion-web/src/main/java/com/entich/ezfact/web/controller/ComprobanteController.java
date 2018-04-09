@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.WebRequest;
 
 import com.entich.commons.catalogo.service.OpcionDeCatalogoService;
 import com.entich.commons.exceptions.ApplicationException;
@@ -135,7 +136,7 @@ public class ComprobanteController extends AbstractController {
 	}
 
 	@RequestMapping(method = { RequestMethod.GET }, value = { "/" })
-	private @ResponseBody Collection<ComprobanteHelper>listaComprobantess(Model model, HttpSession session, 
+	private @ResponseBody Collection<ComprobanteHelper>listaComprobantess(WebRequest request, Model model, HttpSession session, 
 			@RequestParam(required = false, value="fi") String fechaInicial,
 			@RequestParam(required = false, value="ff") String fechaFinal,
 			@RequestParam(required = false, value="mi") BigDecimal montoMin,
@@ -153,10 +154,12 @@ public class ComprobanteController extends AbstractController {
 		Date fInicio = null;
 		Date fFin = null;
 		
+		String idclave = request.getParameter("lblclave");
+		
 		if (fechaInicial == null && fechaFinal == null && tipoDocumento == null
 				&& idCliente == null && StringUtils.isBlank(rfc) && StringUtils.isBlank(nombreCliente)
 				&& estatus == null && montoMin == null && montoMax == null) {
-			return comprobanteService.find(emisor);
+			return comprobanteService.findOnly50(emisor,0);
 		} else {
 			if (idCliente != null || rfc != null || nombreCliente != null) {
 				cliente = ClienteFactory.newInstance(ClientePersonaFisica.class);
