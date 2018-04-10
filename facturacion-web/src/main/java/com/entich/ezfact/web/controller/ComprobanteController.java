@@ -145,7 +145,8 @@ public class ComprobanteController extends AbstractController {
 			@RequestParam(required = false, value="c") Long idCliente,
 			@RequestParam(required = false, value="nc") String nombreCliente,
 			@RequestParam(required = false, value="rfc") String rfc,
-			@RequestParam(required = false, value="e") Boolean estatus
+			@RequestParam(required = false, value="e") Boolean estatus,
+			@RequestParam(required = false, value="lblclave") String idquery
 			) {
 		
 		Emisor emisor = (Emisor) session.getAttribute("emisorSession");

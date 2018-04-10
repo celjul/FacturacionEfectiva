@@ -3,6 +3,7 @@
  */
 var FacturasViewModel = function(data) {
 	var self = this;
+		self.lblclave = ko.observable(Object.get(data,"lblclave"));
 		self.fechaInicio = ko.observable(Object.get(data, "fi"));
 		self.fechaFin = ko.observable(Object.get(data, "ff"));
 		self.tipoDocumento = ko.observable(Object.get(data, "t"));

@@ -40,7 +40,7 @@
 					<div class="panel-body" id="panelfiltro">
 						<form role="form" id="form-list" method="get"
 							novalidate="novalidate">
-							<input type="hidden" id="lblclave" name="lblclave" value="1">
+							
 							<fieldset>
 								<div class="row">
 									<div class="col-md-2">
@@ -222,24 +222,24 @@
 									</tr>
 								</tbody>
 							</table>
-							<ul class="pagination">
-						  <li class="disabled">
-						    <a href="#">&laquo;</a>
-						  </li>
-						  <li class="active">
-						    <a href="#" onClick="document.location.href=getUrl(1);" >1 <span class="sr-only">(página actual)</span></a>
-						  </li>
-						  <li >
-						    <a href="#" onClick="document.location.href=getUrl(2);" >2 <span class="sr-only">(página actual)</span></a>
-						  </li>
-						  						  <li >
-						    <a href="#" onClick="document.location.href=getUrl(3);" >3 <span class="sr-only">(página actual)</span></a>
-						  </li>
-						  						  <li >
-						    <a href="#" onClick="document.location.href=getUrl(4);" >4 <span class="sr-only">(página actual)</span></a>
-						  </li>
-						</ul>
+						
 							</form>
+							<form action="${contextPath}/app/comprobantes/?lblclave=3=1" method="GET" id="form-lista">
+							<input type="hidden" id="lblclave" name="lblclave" value="1">
+							</form>
+							
+							<ul class="pagination">
+						  		<li>
+						    		<a	href="#" id="myLink"  onclick="pasaridclave(1)">1 <span class="sr-only">(página actual)</span></a>
+							  	</li>
+							  	<li >
+							    	<a href="#" id="myLink"  onclick="pasaridclave(2)">2 <span class="sr-only">(página actual)</span></a>
+							  	</li>
+								<li >
+							    	<a href="#" id="myLink" onclick="pasaridclave(3) ">3 <span class="sr-only">(página actual)</span></a>
+							  	</li>
+							</ul>
+							
 						</div>
 					</div>
 				</div>
@@ -351,11 +351,20 @@
             $("#panelfiltro").slideToggle("slow");
          });
       });
-      function getUrl(id)
-      {
-    	  document.getElementById("lblclave").value = id;
-          return "${contextPath}/app/comprobantes/list";
+      
+      ('#myLink').click(function(){ 
+    	  pasaridclave(2); 
+    	  return false;
+    	});
+      
+      function pasaridclave(id){
+    	  alert(id);
+    	  document.getElementById('lblclave').value=id;
+    	  var myform = document.getElementById('form-lista');
+	      myform.submit();
       }
+
+      
    </script>
 </body>
 </html>
