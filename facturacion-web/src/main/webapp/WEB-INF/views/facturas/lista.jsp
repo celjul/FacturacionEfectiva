@@ -358,10 +358,10 @@
     	});
       
       function pasaridclave(id){
-    	  alert(id);
     	  document.getElementById('lblclave').value=id;
-    	  var myform = document.getElementById('form-lista');
-	      myform.submit();
+    	  return false;
+    	  //var myform = document.getElementById('form-lista');
+	      //myform.submit();
       }
 
       
