@@ -224,7 +224,7 @@
 							</table>
 						
 							</form>
-							<form action="${contextPath}/app/comprobantes/?lblclave=3=1" method="GET" id="form-lista">
+							<form action="${contextPath}/app/comprobantes/list?lblclave=1" method="GET" id="form-lista">
 							<input type="hidden" id="lblclave" name="lblclave" value="1">
 							</form>
 							
@@ -359,9 +359,10 @@
       
       function pasaridclave(id){
     	  document.getElementById('lblclave').value=id;
-    	  return false;
-    	  //var myform = document.getElementById('form-lista');
-	      //myform.submit();
+    	
+    	  var myform = document.getElementById('form-lista');
+	      myform.submit();
+	      return false;
       }
 
       

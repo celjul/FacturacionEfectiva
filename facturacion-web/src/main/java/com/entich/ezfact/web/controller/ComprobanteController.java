@@ -124,7 +124,14 @@ public class ComprobanteController extends AbstractController {
 	}
 
 	@RequestMapping(method = { RequestMethod.GET }, value = { "/list" })
-	public String listaComprobantesView() {
+	public String listaComprobantesView(WebRequest request,HttpSession session) {
+		Emisor emisor = (Emisor) session.getAttribute("emisorSession");
+		String idclave = request.getParameter("lblclave");
+		if(idclave==null||idclave.equals("")) {
+			idclave="0";
+		}
+		emisor.setClavelista(idclave);
+		session.setAttribute("emisorSession", emisor);
 		return "facturas/lista";
 	}
 	
@@ -145,8 +152,7 @@ public class ComprobanteController extends AbstractController {
 			@RequestParam(required = false, value="c") Long idCliente,
 			@RequestParam(required = false, value="nc") String nombreCliente,
 			@RequestParam(required = false, value="rfc") String rfc,
-			@RequestParam(required = false, value="e") Boolean estatus,
-			@RequestParam(required = false, value="lblclave") String idquery
+			@RequestParam(required = false, value="e") Boolean estatus
 			) {
 		
 		Emisor emisor = (Emisor) session.getAttribute("emisorSession");
@@ -154,13 +160,15 @@ public class ComprobanteController extends AbstractController {
 		TipoDocumento tipo = null;
 		Date fInicio = null;
 		Date fFin = null;
-		
-		String idclave = request.getParameter("lblclave");
+		String idclave = "0";
+		if(emisor.getClavelista() != null) {
+			idclave = emisor.getClavelista();
+		}
 		
 		if (fechaInicial == null && fechaFinal == null && tipoDocumento == null
 				&& idCliente == null && StringUtils.isBlank(rfc) && StringUtils.isBlank(nombreCliente)
 				&& estatus == null && montoMin == null && montoMax == null) {
-			return comprobanteService.findOnly50(emisor,0);
+			return comprobanteService.findOnly50(emisor,Integer.valueOf(idclave));
 		} else {
 			if (idCliente != null || rfc != null || nombreCliente != null) {
 				cliente = ClienteFactory.newInstance(ClientePersonaFisica.class);

@@ -283,4 +283,15 @@ public abstract class Emisor implements Serializable {
 	public void setPlantilla(String plantilla) {
 		this.plantilla = plantilla;
 	}
+	
+	public String getClavelista() {
+		return clavelista;
+	}
+
+	public void setClavelista(String clavelista) {
+		this.clavelista = clavelista;
+	}
+
+	private String clavelista;
+	
 }
