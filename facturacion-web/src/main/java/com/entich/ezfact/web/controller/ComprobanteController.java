@@ -124,14 +124,17 @@ public class ComprobanteController extends AbstractController {
 	}
 
 	@RequestMapping(method = { RequestMethod.GET }, value = { "/list" })
-	public String listaComprobantesView(WebRequest request,HttpSession session) {
+	public String listaComprobantesView(WebRequest request,HttpSession session,Model model) {
 		Emisor emisor = (Emisor) session.getAttribute("emisorSession");
 		String idclave = request.getParameter("lblclave");
 		if(idclave==null||idclave.equals("")) {
 			idclave="0";
 		}
+		Long a = comprobanteService.countRows(emisor);
+		float numeroDivisiones =  a.floatValue()/50;
 		emisor.setClavelista(idclave);
 		session.setAttribute("emisorSession", emisor);
+		model.addAttribute("numeroDivisiones", numeroDivisiones);
 		return "facturas/lista";
 	}
 	

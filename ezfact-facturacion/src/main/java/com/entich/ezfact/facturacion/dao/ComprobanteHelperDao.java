@@ -19,4 +19,6 @@ public interface ComprobanteHelperDao extends GenericDao<ComprobanteHelper, Long
 	Collection<ComprobanteHelper> findOnly50(Emisor emisor, Date inicio, Date fin, 
 			BigDecimal montoMin, BigDecimal montoMax, Cliente cliente,
 			TipoDocumento tipo, Boolean estatus, String nombreCliente,int idCampos);
+	
+	Long countRows(Emisor emisor);
 }

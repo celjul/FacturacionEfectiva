@@ -32,4 +32,6 @@ public interface ComprobanteHelperService {
 			TipoDocumento tipo, Boolean estatus, String nombreCliente);
 
 	Collection<ComprobanteHelper> findOnly50(Emisor emisor,int id);
+
+	Long countRows(Emisor emisor);
 }

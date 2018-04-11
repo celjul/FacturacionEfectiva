@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -166,5 +167,25 @@ public class ComprobanteHelperDaoImpl extends GenericHibernateDaoImpl<Comprobant
             LOG.error(message, ex);
             throw new DataAccessException(message, ex);
         }
+    }
+    @Transactional(readOnly = true)
+    @Override
+    public Long countRows(Emisor emisor) {
+    	 try {
+             Criteria criteria = sessionFactory.getCurrentSession()
+                     .createCriteria(getType());
+             criteria.add(Restrictions.eq("emisor", emisor.getId()));
+             criteria.setProjection(Projections.rowCount()).uniqueResult();   
+             Long count = (Long) criteria.setProjection(Projections.rowCount()).uniqueResult();
+             
+             return count;
+         } catch (HibernateException ex) {
+             String message = String.format(
+                     "Error al recuperar los objetos del tipo {%s} desde la base "
+                             + "de datos.", getType().getSimpleName());
+             LOG.error(message, ex);
+             throw new DataAccessException(message, ex);
+         }
+    	
     }
 }

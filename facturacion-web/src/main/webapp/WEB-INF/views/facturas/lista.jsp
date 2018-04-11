@@ -226,20 +226,9 @@
 							</form>
 							<form action="${contextPath}/app/comprobantes/list?lblclave=1" method="GET" id="form-lista">
 							<input type="hidden" id="lblclave" name="lblclave" value="1">
+							<input type="hidden" id="numeroDivisiones" name="numeroDivisiones" value="${numeroDivisiones}">
 							</form>
-							
-							<ul class="pagination">
-						  		<li>
-						    		<a	href="#" id="myLink"  onclick="pasaridclave(1)">1 <span class="sr-only">(página actual)</span></a>
-							  	</li>
-							  	<li >
-							    	<a href="#" id="myLink"  onclick="pasaridclave(2)">2 <span class="sr-only">(página actual)</span></a>
-							  	</li>
-								<li >
-							    	<a href="#" id="myLink" onclick="pasaridclave(3) ">3 <span class="sr-only">(página actual)</span></a>
-							  	</li>
-							</ul>
-							
+						  		<p id="paginas"></p>
 						</div>
 					</div>
 				</div>
@@ -350,7 +339,23 @@
 		  $("#titulofiltro").click(function(){
             $("#panelfiltro").slideToggle("slow");
          });
+		  paginadordinamico(); 
       });
+      
+      function paginadordinamico() {
+    	    var text = "";
+    	    var i = 0;
+    	    var a=0;
+    	    var numero = document.getElementById('numeroDivisiones').value;
+    	    text="<ul class='pagination'>";
+    	    while (i <= numero) {
+    	    	a=1+a;
+    	    	text=text+"<li><a href='#' id='myLink' onclick='pasaridclave("+i+")''>"+a+" </a></li>";
+    	        i++;
+    	    }
+    	    text=text+"</ul>";
+    	    document.getElementById('paginas').innerHTML = text;
+    	}
       
       ('#myLink').click(function(){ 
     	  pasaridclave(2); 
@@ -359,7 +364,6 @@
       
       function pasaridclave(id){
     	  document.getElementById('lblclave').value=id;
-    	
     	  var myform = document.getElementById('form-lista');
 	      myform.submit();
 	      return false;
