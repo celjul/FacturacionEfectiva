@@ -28,7 +28,7 @@ $(function() {
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-right"> 
-					<a  download="Layoutconejemplo.csv">Archivo CSV Ejemplo</a> | <a href="#">Cat&aacute;logos SAT</a>
+					<a  href="${img}/file/Layoutconejemplo.csv" download>Archivo CSV Ejemplo</a> | <a href="#">Cat&aacute;logos SAT</a>
 				</p>
 				<p class="text-muted">Tiempo aproximado:</p>
 			</div>
