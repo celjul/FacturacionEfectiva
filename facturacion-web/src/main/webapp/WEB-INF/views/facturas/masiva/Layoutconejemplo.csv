@@ -1,0 +1,3 @@
+Factura,RFC,Razon Social,Pais,Uso CFDi,Condiciones Pago,Forma Pago,Lugar Expedicion,M_todo de Pago,Concepto,Cantidad,Precio Unitario,Clave Producto,Clave Unidad,Codigo,IVA Trasladado,IEPS Trasaladado,IVA Retenido,ISR Retenido,Descuento,Id Venta Unica,uuid
+40035,CESJ911010JG0,LETICIA TREVIÑO MARROQUIN,Mex,P01,Aplazado,99,11300,ppd,SSANO-1OM - Soy Sano,1,27,60105600,E48,SSANO-1OM,,0,0,0,0,256066,
+40036,CESJ911010JG0,LETICIA TREVIÑO MARROQUIN,Mex,P01,Aplazado,99,11300,ppd,SSANO-1OM - Soy Sano,1,42,60105600,E48,SSANO-1OM,,0,0,0,0,256066,

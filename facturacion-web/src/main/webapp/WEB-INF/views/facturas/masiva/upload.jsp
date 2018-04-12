@@ -27,8 +27,8 @@ $(function() {
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<p class="text-right">
-					<a href="#">Archivo CSV Ejemplo</a> | <a href="#">Cat&aacute;logos SAT</a>
+				<p class="text-right"> 
+					<a  download="Layoutconejemplo.csv">Archivo CSV Ejemplo</a> | <a href="#">Cat&aacute;logos SAT</a>
 				</p>
 				<p class="text-muted">Tiempo aproximado:</p>
 			</div>
@@ -77,5 +77,9 @@ $(function() {
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/decorators/menu.jsp" />
+	<script type="text/javascript">
+	$("#fileRequest").click(function() {
+	    window.location = 'file.doc';
+	});</script>
 </body>
 </html>
