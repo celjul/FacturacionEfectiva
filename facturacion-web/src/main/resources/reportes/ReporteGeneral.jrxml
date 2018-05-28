@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-05-28T15:24:08 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="762" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="20" uuid="67b63828-0e41-423b-8a64-e46b996e0b8c">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -94,7 +95,7 @@ ORDER BY
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<text><![CDATA[Reporte de CFDI]]></text>
+				<text><![CDATA[Reporte de CFDI puñ]]></text>
 			</staticText>
 			<frame>
 				<reportElement key="" style="Table Header" mode="Opaque" x="0" y="50" width="762" height="28" uuid="998a2c99-222d-48fa-9fbf-1e15cc91df0e">
@@ -141,10 +142,10 @@ Creación]]></text>
 					<text><![CDATA[Folio]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="" style="Table Header" x="545" y="0" width="217" height="28" uuid="7a616968-6b0a-4e06-af0e-99639dbb1a60">
+					<reportElement key="" style="Table Header" x="430" y="0" width="40" height="28" uuid="a4d857fb-8097-4339-a434-3e51ff6463f0">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
-					<text><![CDATA[UUID]]></text>
+					<text><![CDATA[No.Vta]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="" style="Table Header" x="470" y="0" width="75" height="28" uuid="3bf27e1f-5a7d-4ee6-91d2-e49bb1fa66c0">
@@ -153,10 +154,10 @@ Creación]]></text>
 					<text><![CDATA[Monto]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="" style="Table Header" x="430" y="0" width="40" height="28" uuid="a4d857fb-8097-4339-a434-3e51ff6463f0">
+					<reportElement key="" style="Table Header" x="545" y="0" width="217" height="28" uuid="7a616968-6b0a-4e06-af0e-99639dbb1a60">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
-					<text><![CDATA[No.Vta]]></text>
+					<text><![CDATA[UUID]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -198,19 +199,19 @@ Creación]]></text>
 					<textFieldExpression><![CDATA[$F{Folio}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="545" y="0" width="217" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f1"/>
-					<textFieldExpression><![CDATA[$F{VUUID}]]></textFieldExpression>
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="430" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f2"/>
+					<textFieldExpression><![CDATA[$F{VVentaUnica}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="$ #,##0.00">
-					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="472" y="0" width="75" height="15" uuid="1e501139-35b9-44d6-8ce5-fa38c4ccb4e3">
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="470" y="0" width="75" height="15" isPrintWhenDetailOverflows="true" uuid="1e501139-35b9-44d6-8ce5-fa38c4ccb4e3">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$F{NMontoSinIva}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="430" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f2"/>
-					<textFieldExpression><![CDATA[$F{VVentaUnica}]]></textFieldExpression>
+					<reportElement style="Detail" stretchType="RelativeToTallestObject" x="545" y="0" width="217" height="15" isPrintWhenDetailOverflows="true" uuid="a4c01c9e-e771-4f32-8cf0-a52924abb5f1"/>
+					<textFieldExpression><![CDATA[$F{VUUID}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -266,16 +267,16 @@ Creación]]></text>
 				<text><![CDATA[UUID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" style="Table Header" x="430" y="50" width="40" height="28" uuid="4d741442-28c9-4fd1-b01f-174945b72292">
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-				</reportElement>
-				<text><![CDATA[No.Vta]]></text>
-			</staticText>
-			<staticText>
 				<reportElement key="" style="Table Header" x="470" y="50" width="75" height="28" uuid="8ad11717-f5ee-43f3-9c9f-e5f3fc2c9ea9">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
 				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" style="Table Header" x="430" y="50" width="40" height="28" uuid="4d741442-28c9-4fd1-b01f-174945b72292">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[No.Vta]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="" style="Table Header" x="85" y="50" width="90" height="28" uuid="72799e05-7c5f-4095-892d-d2ec50a93d02">
