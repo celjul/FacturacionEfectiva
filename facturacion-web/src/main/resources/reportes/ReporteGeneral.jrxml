@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-05-28T15:24:08 -->
+<!-- 2018-05-28T21:32:06 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="762" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="20" uuid="67b63828-0e41-423b-8a64-e46b996e0b8c">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -95,7 +95,7 @@ ORDER BY
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<text><![CDATA[Reporte de CFDI puñ]]></text>
+				<text><![CDATA[Reporte de CFDI]]></text>
 			</staticText>
 			<frame>
 				<reportElement key="" style="Table Header" mode="Opaque" x="0" y="50" width="762" height="28" uuid="998a2c99-222d-48fa-9fbf-1e15cc91df0e">
